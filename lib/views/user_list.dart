@@ -3,6 +3,7 @@ import 'package:flutter_crud/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 import '../components/user_tile.dart';
+import '../models/user.dart';
 import '../provider/users.dart';
 
 class UserList extends StatelessWidget {
@@ -17,9 +18,13 @@ class UserList extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.add),
             onPressed: () {
-              Navigator.of(context).pushNamed(
-                AppRoutes.USER_FORM,
-              );
+              Navigator.of(context).pushNamed(AppRoutes.UserForm,
+                  arguments: const User(
+                    id: '',
+                    name: '',
+                    email: '',
+                    AvatarUrl: '',
+                  ));
             },
           ),
         ],
